@@ -14,13 +14,12 @@
             <p><label>Telefono: </label> <input type="text" name="telefono"> </p>
             <button type="submit"> Enviar </button>            
         </form>
-        <!-- comment
+        
         <h1>Ver lista de usuarios</h1>
             <p>Para ver los datos de los usuarios cargados haga click en el siguiente botón</p>
-            <form action="SvUsuarios" method="get">
-                <button type="submit"> Mostrar usuarios</button>
-                                
+            <form action="SvUsuarios" method="GET">
+                <button type="submit"> Mostrar usuarios</button>                    
             </form>
-         -->
+        
     </body>
 </html>
