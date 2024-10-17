@@ -5,6 +5,7 @@ com\mypc\primerservlet\JakartaRestConfiguration.class
 logica\Controladora.class
 com\mypc\primerservlet\resources\JakartaEE8Resource.class
 logica\Usuario_.class
+com\mypc\primerservlet\servlets\SvEditar.class
 persistencia\UsuarioJpaController.class
 persistencia\exceptions\NonexistentEntityException.class
 persistencia\exceptions\PreexistingEntityException.class

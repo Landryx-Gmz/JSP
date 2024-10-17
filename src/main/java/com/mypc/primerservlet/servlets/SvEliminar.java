@@ -31,6 +31,8 @@ public class SvEliminar extends HttpServlet {
         int id_eliminar = Integer.parseInt(request.getParameter("id_usuario"));
         control.borrarUsuario(id_eliminar);
         
+        response.sendRedirect("mostarUsuario.jsp");
+        
     }
 
     @Override
