@@ -11,10 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logica.Controladora;
 import logica.Usuario;
 
 @WebServlet(name = "SvUsuarios", urlPatterns = {"/SvUsuarios"})
 public class SvUsuarios extends HttpServlet {
+    Controladora control = new Controladora();
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -25,17 +27,13 @@ public class SvUsuarios extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Usuario> listaUsuarios = new ArrayList<>();
-        listaUsuarios.add(new Usuario("123","Landryx","Joe","44444"));
-        listaUsuarios.add(new Usuario("132","Land","oe","5555"));
-        listaUsuarios.add(new Usuario("767","Dryx","Jo","7777"));
+        List<Usuario> listaUsuarios = new ArrayList<Usuario>();
+        listaUsuarios=control.traerUsuarios();
         
         HttpSession misesion = request.getSession();
         misesion.setAttribute("listaUsuarios", listaUsuarios);
 
-        
-        response.sendRedirect("mostrarUsuarios.jsp");
-        
+        response.sendRedirect("mostrarUsuarios.jsp");        
     }
 
     @Override
@@ -47,10 +45,16 @@ public class SvUsuarios extends HttpServlet {
         String apellido = request.getParameter("apellido");
         String telefono = request.getParameter("telefono");
         
-        System.out.println("Dni es:" + dni);
-        System.out.println("Nombre es:" + nombre);
-        System.out.println("Apellido es:" + apellido);
-        System.out.println("Telefono es:" + telefono);
+        Usuario usu = new Usuario();
+        usu.setDni(dni);
+        usu.setNombre(nombre);
+        usu.setApellido(apellido);
+        usu.setTelefono(telefono);
+
+        
+        control.crearUsuario(usu);
+        
+        response.sendRedirect("index.jsp");
 
     }
 

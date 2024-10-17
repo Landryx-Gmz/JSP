@@ -11,12 +11,12 @@
     <body>
          <h1>Lista de Usuarios registrados</h1>
         <%
-            List<Usuario> listaUsuarios = (List) request.getSession().getAttribute("listaUsuarios");
+            List<Usuario> listaUsuarios = (List<Usuario>) request.getSession().getAttribute("listaUsuarios");
             int cont = 1;
                 for(Usuario usu : listaUsuarios) {
         %>
         
-        <p><b>Usuraio # <%=cont%> </b></p>
+        <p><b>Usuario # <%=cont%> </b></p>
         <p>Dni: <%=usu.getDni()%></p>
         <p>Nombre: <%=usu.getNombre()%></p>
         <p>Apellido: <%=usu.getApellido()%></p>
