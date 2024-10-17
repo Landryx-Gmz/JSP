@@ -17,6 +17,7 @@
         %>
         
         <p><b>Usuario # <%=cont%> </b></p>
+        <p>Id: <%=usu.getId()%></p>
         <p>Dni: <%=usu.getDni()%></p>
         <p>Nombre: <%=usu.getNombre()%></p>
         <p>Apellido: <%=usu.getApellido()%></p>
